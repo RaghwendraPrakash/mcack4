@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Point</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+                        <!-- CheckPoint one HTML   -->
+ 
+    <div id="navbar"> 
+        <div id="brand"> 
+            <img src="./Images/logo.png" alt="Brand Logo">
+            <span style="font-size: larger;">Travel Point</span>
+        </div>
+
+        <ul id="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Book</a></li>
+            <li id="packages"><a href="#">Packages</a> 
+                <ul>
+                    <li><a href="#">India</a></li>
+                    <li><a href="#">Russia</a></li>
+                    <li><a href="#">France</a></li>
+                    <li><a href="#">Germany</a></li>
+                    <li><a href="#">Switzerland</a></li>
+                    <li><a href="#">Italy</a></li>
+                    <li><a href="#">Dubai</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+
+        <div id="login-register">
+            <button id="login-btn" data-toggle="modal" data-target="#loginModal">Login</button>
+            <button id="submit-btn" data-toggle="modal" data-target="#registerModal">Register</button>           
+        </div>
+    </div>
+ 
+    <div id="background-image"> 
+        <div id="welcome-text">
+            <h1>Welcome to Travel Point</h1>
+        </div>
+
+        <div id="visit-text">
+            <h2>Visit <span id="place-name">Placename</span></h2>
+        </div>
+
+        <a href="#" id="book-now-btn">Book Now</a>
+    </div>
+
+
+
+
+
+
+
+                    <!-- Check Point two HTML  -->
+
+    <h1 class="main-heading">Book You Trip</h1>
+    <div class="main-container-1">
+        <div class="left-main-container">
+            <img src="./Images/travel.jpg" alt="travel image">
+        </div>
+        <div class="right-main-container"> 
+            <form>
+                <div class="mb-3">
+                    <input required
+                      type="text"
+                      class="form-control"
+                      id="destination"
+                      list="bookingPlaces"
+                      placeholder="Where To"
+                      required
+                    />
+                    <datalist id="bookingPlaces">
+                      <option value="India">India</option>
+                      <option value="Russia">Russia</option>
+                      <option value="France">France</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Switzerland">Switzerland</option>
+                      <option value="Italy">Italy</option>
+                      <option value="Dubai">Dubai</option>
+                    </datalist>
+                </div><br>
+                <label for="people">How Many Person:</label>
+                <input required style="padding: 10px; border-radius: 10px;" type="number" id="people" name="people" min="1"><br><br>
+                <label for="start-date">Start Date:</label>
+                <input required style="padding: 10px; border-radius: 10px;" type="date" id="start-date" name="start-date" value="" onchange="setMinEndDate()"><br><br>
+                <label for="end-date">End Date:</label>
+                <input required style="padding: 10px; border-radius: 10px;" type="date" id="end-date" name="end-date" min="" disabled><br><br>
+                <label for="description">Description:</label><br>
+                <textarea style="padding: 10px; border-radius: 10px;" id="description" name="description" rows="4" cols="50" minlength="50" maxlength="500"></textarea><br><br>
+                <button style="padding: 10px; border-radius: 10px; background-color: rgb(194, 81, 0); border: none;" type="button" onclick="bookNow()">Book Now</button>
+            </form>
+        </div>
+    </div>
+    
+    <h1 class="main-heading" style="background-color: yellow; margin: 0; padding-top: 30px; color: rgb(117, 106, 93);">Packages</h1>
+    <div id="main-container-2"></div>
+     
+    <h1 class="main-heading" id="services-heading" style="background-color: rgb(142, 149, 142); margin: 0; padding: 30px;">Services</h1>
+    <div id="main-container-3" style="padding-bottom: 160px;"></div>
+
+
+                <!-- Check Point three HTML  -->
+    <h1 class="main-heading" style="background-color: rgb(80, 80, 82); margin: 0; padding-top: 30px;">Gallery</h1>    
+    <div class="galary-section-container">
+        <div class="container">
+            <img src="./Images/1mansea.jpg">
+            <img src="./Images/2glamar.jpg">
+            <img src="./Images/3nature.jpg">
+            <img src="./Images/4hill.jpg">
+            <img src="./Images/5para.jpg">
+            <img src="./Images/6famous.jpg">
+            <img src="./Images/7mumbai.jpg">
+            <img src="./Images/8food.jpg">
+        </div>
+    </div>        
+
+    <h1 class="main-heading" style="padding: 20px; background-color: rgb(73, 89, 41); margin: 0;">About</h1>
+    <div class="about-container">
+        <div class="right-about-container">
+            <img src="./Images/dhruvratee.jpg" alt="travel image">
+        </div>
+        <div class="left-about-container">
+            <p>Welcome to Travel Point, where journeys become unforgettable adventures.Explore the world with us and discover new horizons, cultures, and experiences.From pristine beaches to majestic mountains, our travel packages cater to every wanderlust.Trust in our expertise and personalized approach to curate your dream vacation.For more information about our company and services, please contact us at contactus@travelpoint.com or ph. 1234567890</p>
+        </div>
+    </div>
+
+    <h1 class="main-heading" style="background-color: violet; margin: 0; padding: 0px;">Contact Us</h1>
+    <div class="footer-container">
+        <div class="address-container">
+            <p style="margin: 0; padding: 0px;">Travel point , Tank Rd, Karol Bagh, New Delhi, Delhi 110005</p>
+            <p style="margin: 0; padding: 0px;">contactus@travelpoint.com</p>
+            <p style="margin: 0; padding: 0px;">1234567890</p>
+        </div>
+        <div class="social-media-container">
+            <i class="fa fa-facebook" style="color: white; font-size: 25px; margin: 20px;"></i>
+            <i class="fa fa-instagram" style="color: white; font-size: 25px; margin: 20px;"></i>
+            <i class="fa fa-linkedin" style="color: white; font-size: 25px; margin: 20px;"></i>
+            <i class="fa fa-whatsapp" style="color: white; font-size: 25px; margin: 20px;"></i>
+        </div>
+    </div>
+    <p style="color: white; text-align: center; background-color: rgb(15, 14, 15); margin-bottom: 0;">&copy; 2024 Travel Point. All Rights Reserved.</p>
+
+    <script src="script.js"></script>
+
+    
+    <!-- Check point four HTML  -->
+
+
+
+    <!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="forxbtnmargin" id="registerModalLabel">Register</h5> -->
+          <h5 class="forxbtnmarginregister" id="registerModalLabel">Register</h5>
+          <button type="button" class="btnclose" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="fullname">Full Name</label>
+              <input type="text" class="form-control" id="fullname" placeholder="Enter your full name" required>
+              <div class="invalid-feedback">Please enter your full name.</div>
+            </div>
+            <div class="form-group">
+              <label for="contact">Contact</label>
+              <input type="text" class="form-control" id="contact" placeholder="Enter your contact number" required pattern="[0-9]{10}" title="Please enter a valid 10-digit contact number">
+              <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth</label>
+              <input type="date" class="form-control" id="dob" required>
+              <div class="invalid-feedback">Please enter your date of birth.</div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+              <div class="invalid-feedback">Please enter a password.</div>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select class="form-control" id="gender" required>
+                <option value="">Select</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+              <div class="invalid-feedback">Please select your gender.</div>
+            </div>
+            <!-- Other form fields -->
+            <button type="submit" class="btn btn-primary margintop10px">Register</button>
+          </form>
+          <div class="mt-3">
+            Already have an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login here</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="forxbtnmarginlogin" id="loginModalLabel">Login</h5>
+          <button type="button" class="btnclose" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="loginEmail">Email address</label>
+              <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+              <div class="invalid-feedback">Please enter a password.</div>
+            </div>
+            <button type="submit" class="btn btn-primary margintop10px">Login</button>
+          </form>
+          <div class="mt-3">
+            Don't have an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register here</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Add event listener for form submission
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+      var isValid = true;
+  
+      // Validate full name
+      var fullnameInput = document.getElementById('fullname');
+      var fullnameValue = fullnameInput.value.trim();
+      if (fullnameValue === '') {
+        isValid = false;
+        fullnameInput.classList.add('is-invalid');
+      } else {
+        fullnameInput.classList.remove('is-invalid');
+      }
+  
+      // Validate contact
+      var contactInput = document.getElementById('contact');
+      var contactValue = contactInput.value.trim();
+      if (contactValue === '' || !contactValue.match(/^\d{10}$/)) {
+        isValid = false;
+        contactInput.classList.add('is-invalid');
+      } else {
+        contactInput.classList.remove('is-invalid');
+      }
+  
+      // Validate date of birth
+      var dobInput = document.getElementById('dob');
+      var dobValue = dobInput.value.trim();
+      if (dobValue === '') {
+        isValid = false;
+        dobInput.classList.add('is-invalid');
+      } else {
+        dobInput.classList.remove('is-invalid');
+      }
+  
+      // Validate email
+      var emailInput = document.getElementById('email');
+      var emailValue = emailInput.value.trim();
+      if (emailValue === '' || !isValidEmail(emailValue)) {
+        isValid = false;
+        emailInput.classList.add('is-invalid');
+      } else {
+        emailInput.classList.remove('is-invalid');
+      }
+  
+      // Validate password
+      var passwordInput = document.getElementById('password');
+      var passwordValue = passwordInput.value.trim();
+      if (passwordValue === '') {
+        isValid = false;
+        passwordInput.classList.add('is-invalid');
+      } else {
+        passwordInput.classList.remove('is-invalid');
+      }
+  
+      // Validate gender
+      var genderInput = document.getElementById('gender');
+      var genderValue = genderInput.value.trim();
+      if (genderValue === '') {
+        isValid = false;
+        genderInput.classList.add('is-invalid');
+      } else {
+        genderInput.classList.remove('is-invalid');
+      }
+  
+      // Prevent form submission if validation fails
+      if (!isValid) {
+        event.preventDefault();
+      }
+    });
+  
+    // Function to validate email address
+    function isValidEmail(email) {
+      var emailRegex = /\S+@\S+\.\S+/;
+      return emailRegex.test(email);
+    }
+  </script>
+  
+</body>
+</html>
